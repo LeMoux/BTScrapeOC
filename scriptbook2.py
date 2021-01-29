@@ -53,8 +53,8 @@ def get_product_infos(url):
             book_selector = soup.find("table", {"class": "table table-striped"}).find_all("td")
             book_upc = book_selector[0]
             book_title = str(soup.find('div', {'class': 'col-sm-6 product_main'}).select('h1')[0].text)
-            book_price_including_tax = book_selector[3]
-            book_price_excluding_tax = book_selector[2]
+            book_price_including_tax = book_selector[3].text[1:]
+            book_price_excluding_tax = book_selector[2].text[1:]
             book_number_available = book_selector[5]
             book_description = soup.find("article", {"class": "product_page"}).find_all("p")[3]
             book_category = str(soup.find('ul', {'class': 'breadcrumb'}).select('li')[2].text).replace("\n", '')
@@ -63,7 +63,7 @@ def get_product_infos(url):
             book_picture_split = book_picture_selector.split('../')[2]
             book_picture_src_link = str('http://books.toscrape.com/' + book_picture_split)
             get_product_picture(book_picture_src_link, book_title, book_category)
-            book_datas = {'product_page_url': book_url, 'upc': book_upc.text, 'title': book_title, 'price_including_tax': book_price_including_tax.text, 'price_excluding_tax': book_price_excluding_tax.text, 'number_available': book_number_available.text, 'product_description': book_description.text, 'category': book_category, 'review_rating': book_review, 'image_url': book_picture_src_link}
+            book_datas = {'product_page_url': book_url, 'upc': book_upc.text, 'title': book_title, 'price_including_tax': book_price_including_tax, 'price_excluding_tax': book_price_excluding_tax, 'number_available': book_number_available.text, 'product_description': book_description.text, 'category': book_category, 'review_rating': book_review, 'image_url': book_picture_src_link}
             create_csv_file(book_category, book_datas)
             return book_datas
 
