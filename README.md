@@ -11,7 +11,11 @@ The Script was created with Python 3.9, Beautifulsoup 4.9.3 and Requests 2.25.1
 
 ## Create virtual python environment
 
-Installing the python environment in the Scrapper folder:
+First, clone the project:
+
+ >git clone https://github.com/LeMoux/BTScrapeOC.git
+ 
+Installing the python virtual environment:
 
  > python -m venv environment_name
  
