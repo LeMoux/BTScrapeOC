@@ -13,11 +13,11 @@ The Script was created with Python 3.9, Beautifulsoup 4.9.3 and Requests 2.25.1
 
 Installing the python environment in the Scrapper folder:
 
- > python -m venv Placeholdername
+ > python -m venv environment_name
  
- > Placeholdername\Scripts\activate
+ > environment_name\Scripts\activate
  
- > python -m pip install -r requirements.txt
+ > pip install -r requirements.txt
 
 start the project:
 
