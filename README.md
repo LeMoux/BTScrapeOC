@@ -9,7 +9,7 @@ This is a Scrapper for the website https://books.toscrape.com/
 
 The Script was created with Python 3.9, Beautifulsoup 4.9.3 and Requests 2.25.1
 
-## First, clone the project:
+## First, clone the project
 
  >git clone https://github.com/LeMoux/BTScrapeOC.git
 
